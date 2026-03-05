@@ -73,7 +73,7 @@ export function AIInsightsPanel({ employeeId }: Props) {
   const [fetchEnabled, setFetchEnabled] = useState(false);
   const [piiRevealed, setPIIRevealed] = useState(false);
 
-  const { isReady: consentReady } = useAIConsent();
+  const { isAccepted: consentAccepted, isReady: consentReady, giveConsent, isLoading: consentLoading } = useAIConsent();
   const { track } = useTelemetry();
 
   const { data, status, hasPII, retryAfter, refetch, isLoading } = useAIInsights(
@@ -84,6 +84,11 @@ export function AIInsightsPanel({ employeeId }: Props) {
   const handleGenerate = () => {
     setFetchEnabled(true);
     setPIIRevealed(false);
+  };
+
+  const handleAcceptConsent = () => {
+    giveConsent();
+    track({ type: 'consent_obtained' });
   };
 
   const handleRetry = () => {
@@ -131,15 +136,52 @@ export function AIInsightsPanel({ employeeId }: Props) {
         <Chip label="Beta" size="small" sx={{ height: 16, fontSize: '0.65rem', bgcolor: '#ede9fe', color: '#7c3aed' }} />
       </Box>
 
-      {/* Idle — show button */}
-      {status === 'idle' && (
+      {/* No Consent — Explicit Agreement Required */}
+      {!consentAccepted && (
+        <Alert
+          severity="info"
+          icon={<AutoAwesomeIcon fontSize="small" />}
+          sx={{
+            fontSize: '0.8rem',
+            bgcolor: '#f5f3ff',
+            color: '#5b21b6',
+            border: '1px solid #ddd6fe',
+            '& .MuiAlert-message': { width: '100%' }
+          }}
+        >
+          <Typography variant="subtitle2" sx={{ fontSize: '0.75rem', fontWeight: 700, mb: 0.5 }}>
+            Enable AI Insights
+          </Typography>
+          <Typography variant="body2" sx={{ fontSize: '0.72rem', mb: 1.5, lineHeight: 1.4 }}>
+            By enabling AI, summaries of employee activity will be generated.
+            Usage data and behavioral telemetry will be sent to the Faros AI backend to improve model quality.
+          </Typography>
+          <Button
+            variant="contained"
+            size="small"
+            fullWidth
+            onClick={handleAcceptConsent}
+            sx={{
+              bgcolor: '#7c3aed',
+              fontSize: '0.75rem',
+              py: 0.5,
+              '&:hover': { bgcolor: '#6d28d9' }
+            }}
+          >
+            Accept & Enable
+          </Button>
+        </Alert>
+      )}
+
+      {/* Consent Ready but Idle — show button */}
+      {consentAccepted && status === 'idle' && (
         <Button
           variant="outlined"
           size="small"
           fullWidth
           startIcon={<AutoAwesomeIcon />}
           onClick={handleGenerate}
-          disabled={!consentReady}
+          disabled={!consentReady || consentLoading}
           sx={{ fontSize: '0.8rem', borderStyle: 'dashed' }}
         >
           {consentReady ? 'Generate Insights' : 'Preparing AI…'}

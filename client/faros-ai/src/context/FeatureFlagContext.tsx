@@ -13,9 +13,10 @@ const FeatureFlagContext = createContext<FeatureFlagContextType>({
 export function FeatureFlagProvider({ children }: { children: React.ReactNode }) {
   const [aiInsightsEnabled, setAIInsightsEnabled] = useState(() => {
     try {
-      return localStorage.getItem('ff_ai_insights') === 'true';
+      const stored = localStorage.getItem('ff_ai_insights');
+      return stored === null ? true : stored === 'true';
     } catch {
-      return false;
+      return true;
     }
   });
 

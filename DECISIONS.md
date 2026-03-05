@@ -1,40 +1,35 @@
 # Decisions and Tradeoffs: Employee Insights Dashboard
 
-This document outlines the architectural decisions and tradeoffs made during the development of the dashboard.
+This document explains the choices I made while building this dashboard.
 
-## 1. Architecture & State Management
-- **React + TypeScript + Vite**: Standard, performant stack, quick to set up and deploy.
+## 1. Architecture Choices
+I chose a stack consisting of **React, TypeScript, and Vite**. This is my go-to for speed and performance.
+- **TanStack Query**: I used this for all data fetching. It handles the "chaos" server (errors and latency) really well out of the box with its retry logic and caching. I considered Apollo Client since we are using GraphQL, but TanStack Query is more flexible because it also handles our REST calls (AI and Telemetry) under one pattern.
+- **Material UI (MUI v6)**: I chose this to build a production-grade UI quickly. It allowed me to match the Figma closely while giving me accessible components for the complex bits like the drawer and filters.
 
-- **TanStack Query (React Query)**: Chosen for server-state management, it's lighter and allows us to handle GraphQL and REST (AI & Telemetry) within the same paradigm, also has a lot of features out of the box and good caching capabilities. 
+## 2. AI Development Workflow
+I built this project using Antigravity.
+- **Setup**: I provided the AI with the full repository context and a special `task.md` file to track our progress. I used an iterative planning process where the AI would propose an `implementation_plan.md` before writing any code.
+- **Corrections**: Early on, the AI implemented the AI consent fetch as a background process. After reviewing the requirements, I had to correct this flow to be "explicit," requiring a real user interaction to accept terms.
+- **Long-term changes**: For a longer project, I'd integrate the AI tools directly into my local CI/CD flow to catch linting or type errors before the AI even presents them to me.
 
-- **Material UI (MUI v6)**: Used for rapid development of a production-grade UI, it has lots of components out of the box and it's easy to customize and to set up.
+## 3. Data and API Challenges
+The mock server was intentionally complex. 
+- **Variable Latency**: I handled this by adding clear loading states (skeletons) and a "pre-loading" strategy for some data.
+- **Data Quality**: I found some messy records, like "Fred Weasley" being assigned to the same team twice. I fixed this by implementing a client-side deduplication step in the table chips.
+- **Server Errors**: I used exponential backoff retries so the app survives the occasional 503 "Service Unavailable" errors.
 
-## 2. API Strategy
-- **GraphQL-Request**: A thin wrapper for GraphQL queries. It's used inside TanStack Query hooks.
-- **Axios for REST**: Used for AI and Telemetry endpoints.
-- **In-Memory Consent Token**: Security decision. The AI consent token is stored in an in-memory object, not `localStorage`, to prevent persistent token leakage. Intentionally refreshing the token 5 minutes before its 1-hour expiry. The token is automatically sent through axios interceptors in each request.
+## 4. Privacy and Security
+- **Explicit Consent**: I designed a "Consent Overlay" in the AI drawer. Insights aren't even requested from the backend until the user explicitly agrees to the data usage.
+- **In-Memory Tokens**: I store the AI consent token in an in-memory object rather than `localStorage`. This prevents the token from leaking if someone walks away from the computer.
+- **PII Guardrails**: I implemented a regex-based scanner on the client side. If the AI returns sensitive info (like a phone number), I blur it out by default.
 
-## 3. Resilience & Production Thinking
-- **Layered Error Handling**: 
-  - `ErrorBoundary` wraps the table and drawer independently. A failure in the AI insights generator won't crash the list of employees.
-  - **Graceful Degradation**: If the AI service is slow or rate-limited, the UI provides specific feedback (countdowns, retry buttons) rather than a generic error.
-- **AI Safety & UX**:
-  - **Lazy Loading**: AI insights are only fetched when requested/viewed to stay within the 10 req/min rate limit.
-  - **PII Guardrails**: Implemented regex-based client-side scanning. Summaries containing PII are blurred by default with a "Reveal" override, ensuring user agency while maintaining safety.
-  - **Confidence Scores**: Visually mapped to color-coded badges (Green/Yellow/Red) and progress bars to build trust through transparency.
+## 5. What I'd do with more time
+If this were going to a real production environment, I'd add:
+- **Server Component Adaptation**: If moving to a framework like Next.js, I'd move much of the data fetching to the server. This would improve security and reduce the initial JavaScript bundle sent to the user.
+- **Advanced A11y**: I'd do a full ARIA audit, especially for keyboard navigation in the infinite-scrolling table.
 
-## 4. AI Development Workflow
-This project was built using Antigravity.
-- **Contextual Awareness**: The AI was provided with the full repo structure, mock server logic, and a UI reference screenshot.
-- **Iterative Planning**: Used an `implementation_plan.md` and `task.md` to sync on technical decisions before writing code.
-- **Human-in-the-Loop**: I reviewed architectural decisions (e.g., Drawer vs. Page, PII blur strategy) before implementation.
-
-## 5. Privacy & Security
-- **Data Minimization**: Only the necessary fields are requested in the GraphQL query.
-- **Sensitive Data Handling**: AI summaries are scanned before rendering. Disclaimers are persistently shown to remind users of the limitations of LLM outputs.
-
-## 6. What I'd do with more time (Future Improvements)
-- **Unit/Integration Testing**: Add Vitest/Testing Library for the PII detection regex and the consent token refresh logic.
-- **E2E Testing**: Use Playwright to verify a full workflow.
-- **Accessibility (A11y)**: Full ARIA audit for the drawer and table keyboard navigation.
-- **Server Component Adaptation**: If moving to a framework like Next.js, move initial data fetching to the server for faster LCP.
+## 6. Testing Strategy
+- **Utility Logic**: I'd use **Vitest** to unit test the PII detection regex and the token refresh math, as these are easy to break.
+- **End-to-End**: I'd use **Playwright** to verify the full flow: searching for an employee, opening their drawer, and triggering an AI insight.
+- **AI Specifics**: For AI content, I would set up a "golden set" of mock responses to verify that our PII blur filters and confidence badges consistently work across different model outputs.
