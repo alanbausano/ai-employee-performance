@@ -68,9 +68,13 @@ const DEFAULT_CHIP_COLORS = [
 
 export function TeamChips({ teams }: TeamChipsProps) {
   if (teams.length === 0) return <span style={{ color: '#94a3b8', fontSize: '0.8rem' }}>—</span>;
+
+  // Deduplicate teams by name to handle messy mock data
+  const uniqueTeams = Array.from(new Map(teams.map((t) => [t.name, t])).values());
+
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-      {teams.map((team, i) => {
+      {uniqueTeams.map((team, i) => {
         const bgColor = TEAM_COLOR_MAP[team.name] || DEFAULT_CHIP_COLORS[i % DEFAULT_CHIP_COLORS.length];
         return (
           <Chip

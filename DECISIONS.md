@@ -12,7 +12,7 @@ This document outlines the architectural decisions and tradeoffs made during the
 ## 2. API Strategy
 - **GraphQL-Request**: A thin wrapper for GraphQL queries. It's used inside TanStack Query hooks.
 - **Axios for REST**: Used for AI and Telemetry endpoints.
-- **In-Memory Consent Token**: Security decision. The AI consent token is stored in an in-memory object, not `localStorage`, to prevent persistent token leakage. Intentionally refreshing the token 5 minutes before its 1-hour expiry.
+- **In-Memory Consent Token**: Security decision. The AI consent token is stored in an in-memory object, not `localStorage`, to prevent persistent token leakage. Intentionally refreshing the token 5 minutes before its 1-hour expiry. The token is automatically sent through axios interceptors in each request.
 
 ## 3. Resilience & Production Thinking
 - **Layered Error Handling**: 
