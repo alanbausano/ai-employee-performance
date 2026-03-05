@@ -26,7 +26,9 @@ The mock server was intentionally complex.
 
 ## 5. What I'd do with more time
 If this were going to a real production environment, I'd add:
-- **Server Component Adaptation**: If moving to a framework like Next.js, I'd move much of the data fetching to the server. This would improve security and reduce the initial JavaScript bundle sent to the user.
+- **Next.js Integration**: Moving to a framework would allow for **SSR (Server-Side Rendering)** and **Middleware**. This moves a lot of the data fetching and security logic (like consent verification) to the server, improving LCP and reducing the client-side bundle.
+- **Edge Strategy**: In case the app escalates to much more users, I'd deploy the application to geographically distributed servers (the Edge). This ensures that a user in New York and a user in London both get fast, low-latency responses by reaching the server closest to them.
+- **Observability**:  I'd integrate professional monitoring tools like **Sentry or Datadog**.
 - **Advanced A11y**: I'd do a full ARIA audit, especially for keyboard navigation in the infinite-scrolling table.
 
 ## 6. Testing Strategy
