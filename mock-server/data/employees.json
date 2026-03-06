@@ -1,0 +1,584 @@
+[
+  {
+    "id": "emp_01",
+    "uid": "harry",
+    "name": "Harry Potter",
+    "email": "harry@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=harry",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" },
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "harry" },
+      { "type": "tms", "source": "Jira", "uid": "harry" },
+      { "type": "ims", "source": "PagerDuty", "uid": "harry" },
+      { "type": "cal", "source": "Google Calendar", "uid": "harry" }
+    ],
+    "activity": { "prsLastMonth": 18, "commitsLastMonth": 67, "reviewsLastMonth": 12, "incidentsLastMonth": 2, "meetingsLastWeek": 8 }
+  },
+  {
+    "id": "emp_02",
+    "uid": "hermione",
+    "name": "Hermione Granger",
+    "email": "hermione@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=hermione",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" },
+      { "id": "team_data_platform", "uid": "data-platform", "name": "Data Platform" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "hermione" },
+      { "type": "tms", "source": "Jira", "uid": "hermione" },
+      { "type": "ims", "source": "PagerDuty", "uid": "hermione" },
+      { "type": "cal", "source": "Google Calendar", "uid": "hermione" }
+    ],
+    "activity": { "prsLastMonth": 24, "commitsLastMonth": 93, "reviewsLastMonth": 19, "incidentsLastMonth": 1, "meetingsLastWeek": 10 }
+  },
+  {
+    "id": "emp_03",
+    "uid": "ron",
+    "name": "Ron Weasley",
+    "email": "ron@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=ron",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "ron" },
+      { "type": "tms", "source": "Jira", "uid": "ron" }
+    ],
+    "activity": { "prsLastMonth": 9, "commitsLastMonth": 31, "reviewsLastMonth": 6, "incidentsLastMonth": 0, "meetingsLastWeek": 5 }
+  },
+  {
+    "id": "emp_04",
+    "uid": "albus",
+    "name": "Albus Dumbledore",
+    "email": "albus@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=albus",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" },
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" },
+      { "id": "team_data_platform", "uid": "data-platform", "name": "Data Platform" },
+      { "id": "team_security", "uid": "security", "name": "Security" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "albus" },
+      { "type": "tms", "source": "Jira", "uid": "albus" },
+      { "type": "ims", "source": "PagerDuty", "uid": "albus" },
+      { "type": "cal", "source": "Google Calendar", "uid": "albus" }
+    ],
+    "activity": { "prsLastMonth": 5, "commitsLastMonth": 12, "reviewsLastMonth": 31, "incidentsLastMonth": 3, "meetingsLastWeek": 14 }
+  },
+  {
+    "id": "emp_05",
+    "uid": "severus",
+    "name": "Severus Snape",
+    "email": "severus@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=severus",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_security", "uid": "security", "name": "Security" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "severus" },
+      { "type": "tms", "source": "Jira", "uid": "severus" },
+      { "type": "ims", "source": "PagerDuty", "uid": "severus" }
+    ],
+    "activity": { "prsLastMonth": 7, "commitsLastMonth": 28, "reviewsLastMonth": 15, "incidentsLastMonth": 5, "meetingsLastWeek": 3 }
+  },
+  {
+    "id": "emp_06",
+    "uid": "minerva",
+    "name": "Minerva McGonagall",
+    "email": "minerva@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=minerva",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" },
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "minerva" },
+      { "type": "tms", "source": "Jira", "uid": "minerva" }
+    ],
+    "activity": { "prsLastMonth": 14, "commitsLastMonth": 52, "reviewsLastMonth": 22, "incidentsLastMonth": 1, "meetingsLastWeek": 9 }
+  },
+  {
+    "id": "emp_07",
+    "uid": "hagrid",
+    "name": "Rubeus Hagrid",
+    "email": "hagrid@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=hagrid",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_infrastructure", "uid": "infrastructure", "name": "Infrastructure" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "hagrid" }
+    ],
+    "activity": { "prsLastMonth": 4, "commitsLastMonth": 18, "reviewsLastMonth": 2, "incidentsLastMonth": 1, "meetingsLastWeek": 4 }
+  },
+  {
+    "id": "emp_08",
+    "uid": "draco",
+    "name": "Draco Malfoy",
+    "email": "draco@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=draco",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "draco" },
+      { "type": "tms", "source": "Jira", "uid": "draco" }
+    ],
+    "activity": { "prsLastMonth": 11, "commitsLastMonth": 39, "reviewsLastMonth": 8, "incidentsLastMonth": 0, "meetingsLastWeek": 6 }
+  },
+  {
+    "id": "emp_09",
+    "uid": "luna",
+    "name": "Luna Lovegood",
+    "email": "luna@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=luna",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_data_platform", "uid": "data-platform", "name": "Data Platform" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "luna" },
+      { "type": "tms", "source": "Jira", "uid": "luna" },
+      { "type": "cal", "source": "Google Calendar", "uid": "luna" }
+    ],
+    "activity": { "prsLastMonth": 16, "commitsLastMonth": 58, "reviewsLastMonth": 10, "incidentsLastMonth": 0, "meetingsLastWeek": 7 }
+  },
+  {
+    "id": "emp_10",
+    "uid": "neville",
+    "name": "Neville Longbottom",
+    "email": "neville@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=neville",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "neville" },
+      { "type": "tms", "source": "Jira", "uid": "neville" }
+    ],
+    "activity": { "prsLastMonth": 8, "commitsLastMonth": 27, "reviewsLastMonth": 5, "incidentsLastMonth": 0, "meetingsLastWeek": 5 }
+  },
+  {
+    "id": "emp_11",
+    "uid": "ginny",
+    "name": "Ginny Weasley",
+    "email": "ginny@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=ginny",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "ginny" },
+      { "type": "tms", "source": "Jira", "uid": "ginny" },
+      { "type": "ims", "source": "PagerDuty", "uid": "ginny" }
+    ],
+    "activity": { "prsLastMonth": 13, "commitsLastMonth": 44, "reviewsLastMonth": 9, "incidentsLastMonth": 2, "meetingsLastWeek": 6 }
+  },
+  {
+    "id": "emp_12",
+    "uid": "fred",
+    "name": "Fred Weasley",
+    "email": "fred@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=fred",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_collaboration", "uid": "collaboration", "name": "Collaboration" },
+      { "id": "team_collaboration_dup", "uid": "collaboration", "name": "Collaboration" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "fred" }
+    ],
+    "activity": { "prsLastMonth": 6, "commitsLastMonth": 22, "reviewsLastMonth": 4, "incidentsLastMonth": 0, "meetingsLastWeek": 3 }
+  },
+  {
+    "id": "emp_13",
+    "uid": "george",
+    "name": "George Weasley",
+    "email": null,
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=george",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_collaboration", "uid": "collaboration", "name": "Collaboration" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "george" }
+    ],
+    "activity": { "prsLastMonth": 7, "commitsLastMonth": 25, "reviewsLastMonth": 3, "incidentsLastMonth": 0, "meetingsLastWeek": 3 }
+  },
+  {
+    "id": "emp_14",
+    "uid": "sirius",
+    "name": "Sirius Black",
+    "email": "sirius@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=sirius",
+    "inactive": true,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_security", "uid": "security", "name": "Security" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "sirius" },
+      { "type": "ims", "source": "PagerDuty", "uid": "sirius" }
+    ],
+    "activity": { "prsLastMonth": 0, "commitsLastMonth": 2, "reviewsLastMonth": 1, "incidentsLastMonth": 0, "meetingsLastWeek": 0 }
+  },
+  {
+    "id": "emp_15",
+    "uid": "remus",
+    "name": "Remus Lupin",
+    "email": "remus@hogwarts.edu",
+    "photoUrl": "https://this-url-is-intentionally-broken.example.com/remus-404.jpg",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "remus" },
+      { "type": "tms", "source": "Jira", "uid": "remus" }
+    ],
+    "activity": { "prsLastMonth": 10, "commitsLastMonth": 36, "reviewsLastMonth": 7, "incidentsLastMonth": 1, "meetingsLastWeek": 5 }
+  },
+  {
+    "id": "emp_16",
+    "uid": "tonks",
+    "name": "Nymphadora Tonks",
+    "email": "tonks@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=tonks",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_security", "uid": "security", "name": "Security" },
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "tonks" },
+      { "type": "ims", "source": "PagerDuty", "uid": "tonks" }
+    ],
+    "activity": { "prsLastMonth": 11, "commitsLastMonth": 40, "reviewsLastMonth": 8, "incidentsLastMonth": 4, "meetingsLastWeek": 6 }
+  },
+  {
+    "id": "emp_17",
+    "uid": "moody",
+    "name": "Alastor Moody",
+    "email": "moody@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=moody",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_collaboration", "uid": "collaboration", "name": "Collaboration" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "moody" },
+      { "type": "tms", "source": "Jira", "uid": "moody" },
+      { "type": "cal", "source": "Google Calendar", "uid": "moody" }
+    ],
+    "activity": { "prsLastMonth": 5, "commitsLastMonth": 19, "reviewsLastMonth": 11, "incidentsLastMonth": 2, "meetingsLastWeek": 8 }
+  },
+  {
+    "id": "emp_18",
+    "uid": "arthur",
+    "name": null,
+    "email": "arthur@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=arthur",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_infrastructure", "uid": "infrastructure", "name": "Infrastructure" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "arthur" }
+    ],
+    "activity": { "prsLastMonth": 3, "commitsLastMonth": 14, "reviewsLastMonth": 2, "incidentsLastMonth": 0, "meetingsLastWeek": 4 }
+  },
+  {
+    "id": "emp_19",
+    "uid": "molly",
+    "name": "Molly Weasley",
+    "email": "molly@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=molly",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_sales", "uid": "sales", "name": "Sales" }
+    ],
+    "accounts": [
+      { "type": "tms", "source": "Jira", "uid": "molly" },
+      { "type": "cal", "source": "Google Calendar", "uid": "molly" }
+    ],
+    "activity": { "prsLastMonth": 0, "commitsLastMonth": 0, "reviewsLastMonth": 0, "incidentsLastMonth": 0, "meetingsLastWeek": 12 }
+  },
+  {
+    "id": "emp_20",
+    "uid": "percy",
+    "name": "Percy Weasley",
+    "email": "percy@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=percy",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_sales", "uid": "sales", "name": "Sales" },
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "tms", "source": "Jira", "uid": "percy" }
+    ],
+    "activity": { "prsLastMonth": 2, "commitsLastMonth": 8, "reviewsLastMonth": 1, "incidentsLastMonth": 0, "meetingsLastWeek": 9 }
+  },
+  {
+    "id": "emp_21",
+    "uid": "cedric",
+    "name": "Cedric Diggory",
+    "email": "cedric@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=cedric",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_data_platform", "uid": "data-platform", "name": "Data Platform" }
+    ],
+    "accounts": [],
+    "activity": { "prsLastMonth": 0, "commitsLastMonth": 0, "reviewsLastMonth": 0, "incidentsLastMonth": 0, "meetingsLastWeek": 3 }
+  },
+  {
+    "id": "emp_22",
+    "uid": "cho",
+    "name": "Cho Chang",
+    "email": "cho@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=cho",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "cho" },
+      { "type": "tms", "source": "Jira", "uid": "cho" }
+    ],
+    "activity": { "prsLastMonth": 10, "commitsLastMonth": 35, "reviewsLastMonth": 7, "incidentsLastMonth": 0, "meetingsLastWeek": 5 }
+  },
+  {
+    "id": "emp_23",
+    "uid": "dobby",
+    "name": "Dobby",
+    "email": "dobby@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=dobby",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_infrastructure", "uid": "infrastructure", "name": "Infrastructure" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "dobby" }
+    ],
+    "activity": { "prsLastMonth": 21, "commitsLastMonth": 85, "reviewsLastMonth": 3, "incidentsLastMonth": 1, "meetingsLastWeek": 2 }
+  },
+  {
+    "id": "emp_24",
+    "uid": "bellatrix",
+    "name": "Bellatrix Lestrange",
+    "email": "bellatrix@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=bellatrix",
+    "inactive": false,
+    "trackingStatus": "Ignored",
+    "trackingCategory": null,
+    "teams": [
+      { "id": "team_security", "uid": "security", "name": "Security" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "bellatrix" }
+    ],
+    "activity": { "prsLastMonth": 3, "commitsLastMonth": 11, "reviewsLastMonth": 0, "incidentsLastMonth": 0, "meetingsLastWeek": 1 }
+  },
+  {
+    "id": "emp_25",
+    "uid": "voldemort",
+    "name": "Tom Riddle",
+    "email": null,
+    "photoUrl": null,
+    "inactive": true,
+    "trackingStatus": "Ignored",
+    "trackingCategory": null,
+    "teams": [],
+    "accounts": [],
+    "activity": { "prsLastMonth": 0, "commitsLastMonth": 0, "reviewsLastMonth": 0, "incidentsLastMonth": 0, "meetingsLastWeek": 0 }
+  },
+  {
+    "id": "emp_26",
+    "uid": "fleur",
+    "name": "Fleur Delacour",
+    "email": "fleur@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=fleur",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_collaboration", "uid": "collaboration", "name": "Collaboration" },
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "fleur" },
+      { "type": "tms", "source": "Jira", "uid": "fleur" },
+      { "type": "cal", "source": "Google Calendar", "uid": "fleur" }
+    ],
+    "activity": { "prsLastMonth": 12, "commitsLastMonth": 41, "reviewsLastMonth": 9, "incidentsLastMonth": 0, "meetingsLastWeek": 7 }
+  },
+  {
+    "id": "emp_27",
+    "uid": "viktor",
+    "name": "Viktor Krum",
+    "email": "viktor@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=viktor",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "viktor" },
+      { "type": "tms", "source": "Jira", "uid": "viktor" }
+    ],
+    "activity": { "prsLastMonth": 15, "commitsLastMonth": 55, "reviewsLastMonth": 11, "incidentsLastMonth": 1, "meetingsLastWeek": 4 }
+  },
+  {
+    "id": "emp_28",
+    "uid": "oliver",
+    "name": "Oliver Wood",
+    "email": "oliver@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=oliver",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "oliver" },
+      { "type": "tms", "source": "Jira", "uid": "oliver" },
+      { "type": "ims", "source": "PagerDuty", "uid": "oliver" }
+    ],
+    "activity": { "prsLastMonth": 9, "commitsLastMonth": 33, "reviewsLastMonth": 6, "incidentsLastMonth": 3, "meetingsLastWeek": 5 }
+  },
+  {
+    "id": "emp_29",
+    "uid": "katie",
+    "name": "Katie Bell",
+    "email": "katie@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=katie",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_frontend", "uid": "frontend", "name": "Frontend" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "katie" },
+      { "type": "tms", "source": "Jira", "uid": "katie" }
+    ],
+    "activity": { "prsLastMonth": 11, "commitsLastMonth": 38, "reviewsLastMonth": 8, "incidentsLastMonth": 0, "meetingsLastWeek": 6 }
+  },
+  {
+    "id": "emp_30",
+    "uid": "padma",
+    "name": "Padma Patil",
+    "email": "padma@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=padma",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "padma" },
+      { "type": "tms", "source": "Jira", "uid": "padma" }
+    ],
+    "activity": { "prsLastMonth": 7, "commitsLastMonth": 24, "reviewsLastMonth": 4, "incidentsLastMonth": 0, "meetingsLastWeek": 3 }
+  },
+  {
+    "id": "emp_31",
+    "uid": "parvati",
+    "name": "Parvati Patil",
+    "email": "parvati@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=parvati",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Active",
+    "teams": [
+      { "id": "team_data_platform", "uid": "data-platform", "name": "Data Platform" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "parvati" },
+      { "type": "tms", "source": "Jira", "uid": "parvati" }
+    ],
+    "activity": { "prsLastMonth": 9, "commitsLastMonth": 30, "reviewsLastMonth": 5, "incidentsLastMonth": 0, "meetingsLastWeek": 4 }
+  },
+  {
+    "id": "emp_32",
+    "uid": "dean",
+    "name": "Dean Thomas",
+    "email": "dean@hogwarts.edu",
+    "photoUrl": "https://api.dicebear.com/9.x/avataaars/svg?seed=dean",
+    "inactive": false,
+    "trackingStatus": "Included",
+    "trackingCategory": "Inactive",
+    "teams": [
+      { "id": "team_backend", "uid": "backend", "name": "Backend" },
+      { "id": "team_collaboration", "uid": "collaboration", "name": "Collaboration" }
+    ],
+    "accounts": [
+      { "type": "vcs", "source": "GitHub", "uid": "dean" },
+      { "type": "tms", "source": "Jira", "uid": "dean" }
+    ],
+    "activity": { "prsLastMonth": 1, "commitsLastMonth": 4, "reviewsLastMonth": 0, "incidentsLastMonth": 0, "meetingsLastWeek": 1 }
+  }
+]
