@@ -11,8 +11,10 @@ import { useAIInsights, type InsightsStatus } from '../../hooks/useAIInsights';
 import { useAIConsent } from '../../hooks/useAIConsent';
 import { useTelemetry } from '../../hooks/useTelemetry';
 
+import { type Employee } from '../../api/employees';
+
 interface Props {
-  employeeId: string;
+  employee: Employee;
 }
 
 function ConfidenceBadge({ confidence }: { confidence: number }) {
@@ -69,7 +71,7 @@ function PIIWarning({ onReveal, revealed }: { onReveal: () => void; revealed: bo
   );
 }
 
-export function AIInsightsPanel({ employeeId }: Props) {
+export function AIInsightsPanel({ employee }: Props) {
   const [fetchEnabled, setFetchEnabled] = useState(false);
   const [piiRevealed, setPIIRevealed] = useState(false);
 
@@ -77,7 +79,7 @@ export function AIInsightsPanel({ employeeId }: Props) {
   const { track } = useTelemetry();
 
   const { data, status, hasPII, retryAfter, refetch, isLoading } = useAIInsights(
-    employeeId,
+    employee,
     fetchEnabled && consentReady
   );
 
@@ -98,7 +100,7 @@ export function AIInsightsPanel({ employeeId }: Props) {
 
   const handleRevealPII = () => {
     setPIIRevealed(true);
-    track({ type: 'ai_insights_revealed', employeeId });
+    track({ type: 'ai_insights_revealed', employeeId: employee.id });
   };
 
   // Track events on status changes
@@ -109,22 +111,22 @@ export function AIInsightsPanel({ employeeId }: Props) {
     if (status === 'success' && data) {
       track({
         type: 'ai_insights_loaded',
-        employeeId,
+        employeeId: employee.id,
         confidence: data.confidence,
         processingTimeMs: data.processingTimeMs,
       });
-      if (hasPII) track({ type: 'ai_pii_detected', employeeId });
+      if (hasPII) track({ type: 'ai_pii_detected', employeeId: employee.id });
     }
     if (status === 'timeout' || status === 'rate-limited' || status === 'error') {
       track({
         type: 'ai_error',
-        employeeId,
+        employeeId: employee.id,
         errorType: status === 'timeout' ? 'timeout' : status === 'rate-limited' ? 'rate-limit' : 'error',
       });
     }
 
     prevStatus.current = status;
-  }, [status, data, hasPII, employeeId, track]);
+  }, [status, data, hasPII, employee.id, track]);
 
   return (
     <Box>

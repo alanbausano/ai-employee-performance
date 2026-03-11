@@ -24,7 +24,7 @@ The mock server was intentionally complex.
 - **In-Memory Tokens**: I store the AI consent token in an in-memory object rather than `localStorage`. This prevents the token from leaking if someone walks away from the computer.
 - **PII Guardrails**: I implemented a regex-based scanner on the client side. If the AI returns sensitive info (like a phone number), I blur it out by default.
 
-## 5. What I'd do with more time
+## 5. What I'd do in next iterations
 If this were going to a real production environment, I'd add:
 - **Next.js Integration**: Moving to a framework would allow for **SSR (Server-Side Rendering)** and **Middleware**. This moves a lot of the data fetching and security logic (like consent verification) to the server, improving LCP and reducing the client-side bundle.
 - **Edge Strategy**: In case the app escalates to much more users, I'd deploy the application to geographically distributed servers (the Edge). This ensures that a user in New York and a user in London both get fast, low-latency responses by reaching the server closest to them.

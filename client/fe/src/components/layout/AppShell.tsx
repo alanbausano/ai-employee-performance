@@ -18,16 +18,6 @@ export function AppShell({ children }: AppShellProps) {
         }}
       >
         <Toolbar sx={{ gap: 2, minHeight: '52px !important' }}>
-          <Box
-            component="img"
-            src="/icons/faros-logo.svg"
-            alt="Faros AI"
-            sx={{ height: 24 }}
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-          />
-          <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary' }}>
-            Faros AI
-          </Typography>
           <Box sx={{ flex: 1 }} />
           <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
             Employee Insights Dashboard

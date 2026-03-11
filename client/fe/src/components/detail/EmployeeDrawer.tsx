@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import type { Employee } from '../../hooks/useEmployees';
+import { type Employee } from '../../api/employees';
 import { AccountIcons } from '../employees/AccountIcons';
 import { TeamChips } from '../shared/StatusBadge';
 import { AIInsightsPanel } from './AIInsightsPanel';
@@ -108,7 +108,7 @@ export function EmployeeDrawer({ employee, onClose }: Props) {
 
             {/* AI Insights — feature-flagged */}
             {aiInsightsEnabled && (
-              <AIInsightsPanel employeeId={employee.id} />
+              <AIInsightsPanel employee={employee} />
             )}
           </Box>
 

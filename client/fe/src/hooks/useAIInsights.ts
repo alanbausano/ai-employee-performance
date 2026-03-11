@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { getInsights, type AIInsightsResponse } from '../api/ai';
+import { type Employee } from '../api/employees';
 
 // PII detection patterns
 const PII_PATTERNS = [
@@ -23,23 +24,23 @@ export type InsightsStatus =
   | 'rate-limited'
   | 'error';
 
-export function useAIInsights(employeeId: string | null, enabled: boolean) {
+export function useAIInsights(employee: Employee | null, enabled: boolean) {
   const query = useQuery<AIInsightsResponse>({
-    queryKey: ['ai-insights', employeeId],
+    queryKey: ['ai-insights', employee?.id],
     queryFn: async ({ signal }) => {
-      if (!employeeId) throw new Error('No employee ID');
+      if (!employee) throw new Error('No employee data');
       // 9s client-side timeout via AbortController
       const timeout = setTimeout(() => {
         // The signal from useQuery is the one we abort
         (signal as AbortSignal & { abort?: () => void }).abort?.();
       }, 9000);
       try {
-        return await getInsights(employeeId, signal);
+        return await getInsights(employee, signal);
       } finally {
         clearTimeout(timeout);
       }
     },
-    enabled: !!employeeId && enabled,
+    enabled: !!employee && enabled,
     retry: false,    // No auto-retry for AI — user must decide
     staleTime: 2 * 60 * 1000, // 2 min cache per employee
   });

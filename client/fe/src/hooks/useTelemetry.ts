@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { apiClient } from '../api/axios';
 
 type TelemetryEvent =
   | { type: 'page_view'; page: string }
@@ -14,16 +13,12 @@ type TelemetryEvent =
 
 export function useTelemetry() {
   const track = useCallback((event: TelemetryEvent) => {
-    // Fire and forget — never block the UI
-    apiClient
-      .post('/api/telemetry', {
-        ...event,
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-      })
-      .catch(() => {
-        // Silently ignore telemetry failures
-      });
+    // Faked telemetry — just log to console
+    console.log('[Telemetry Event]', {
+      ...event,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+    });
   }, []);
 
   return { track };
