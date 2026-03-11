@@ -11,7 +11,25 @@ This dashboard allows engineering managers to view employee activity and generat
 
 ---
 
-## 🚀 Setup & Running Locally
+## � Project Structure
+
+```text
+├── api/                # Vercel Serverless Functions (Backend)
+│   ├── index.js        # Entry point for AI insights API
+│   ├── ai-simulator.js # LLM logic and Groq integration
+│   ├── prompts/        # Prompt templates for Llama 3.3
+│   └── data/           # Reference data (employee metrics)
+├── client/fe/          # Vite + React Frontend
+│   ├── src/api/        # API services (Axios configured for Vercel)
+│   ├── src/hooks/      # Data fetching hooks (React Query)
+│   └── src/components/ # UI Components (MUI)
+├── vercel.json         # Routing configuration for deployment
+└── README.md           # You are here
+```
+
+---
+
+## �🚀 Setup & Running Locally
 
 ### 1. Prerequisites
 - Node.js 20+
@@ -21,10 +39,10 @@ This dashboard allows engineering managers to view employee activity and generat
 ### 2. Backend Setup (Groq LLM Wrapper)
 1. Initialize the backend:
    ```bash
-   cd mock-server
+   cd api
    npm install
    ```
-2. Create a `.env` file in `server/`:
+2. Create a `.env` file in `api/`:
    ```env
    GROQ_API_KEY=your_gsk_key_here
    PORT=4000
@@ -45,6 +63,21 @@ This dashboard allows engineering managers to view employee activity and generat
    npm run dev
    ```
 3. Open `http://localhost:5173`.
+
+---
+
+## ☁️ Deployment to Vercel
+
+This project is configured as a monorepo that Vercel can host as a single project:
+
+1. **Import to Vercel**: Connect your GitHub repo (`ai-employee-performance`).
+2. **Project Settings**:
+   - **Build Command**: `cd client/fe && npm install && npm run build`
+   - **Output Directory**: `client/fe/dist`
+   - **Root Directory**: `./` (Leave as default)
+3. **Environment Variables**:
+   - Add `GROQ_API_KEY`: Your real Groq API key.
+4. **Deploy**: Hit deploy and your app will be live with real AI insights!
 
 ---
 

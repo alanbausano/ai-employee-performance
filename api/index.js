@@ -14,7 +14,4 @@ app.use(express.json());
 // Routes
 app.use('/api/ai', aiInsightsRouter);
 
-app.listen(port, () => {
-  console.log(`\n🚀 AI Insights Server ready at http://localhost:${port}`);
-  console.log(`Mode: Real LLM (Groq)\n`);
-});
+export default app;
