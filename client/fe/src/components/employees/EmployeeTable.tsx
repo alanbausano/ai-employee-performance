@@ -4,7 +4,7 @@ import {
   Paper,
 } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
-import type { Employee } from '../../hooks/useEmployees';
+import { type Employee } from '../../api/employees';
 import { StatusBadge, TeamChips } from '../shared/StatusBadge';
 import { AccountIcons } from './AccountIcons';
 import { SkeletonTable } from '../shared/SkeletonTable';

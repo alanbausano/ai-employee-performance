@@ -72,7 +72,7 @@ This project is configured as a monorepo that Vercel can host as a single projec
 
 1. **Import to Vercel**: Connect your GitHub repo (`ai-employee-performance`).
 2. **Project Settings**:
-   - **Build Command**: `cd client/fe && npm install && npm run build`
+   - **Build Command**: `npm run build`
    - **Output Directory**: `client/fe/dist`
    - **Root Directory**: `./` (Leave as default)
 3. **Environment Variables**:

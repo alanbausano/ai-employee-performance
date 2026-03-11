@@ -3,7 +3,8 @@ import {
   Box, Typography, Snackbar, Alert,
   Breadcrumbs, Link,
 } from '@mui/material';
-import { useEmployees, type EmployeeFilter, type Employee } from '../hooks/useEmployees';
+import { useEmployees, type EmployeeFilter } from '../hooks/useEmployees';
+import { type Employee } from '../api/employees';
 import { useTelemetry } from '../hooks/useTelemetry';
 import { SearchBar } from '../components/employees/SearchBar';
 import { EmployeeFilters } from '../components/employees/EmployeeFilters';
