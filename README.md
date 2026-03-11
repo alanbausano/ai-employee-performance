@@ -1,4 +1,4 @@
-# Faros AI — Employee Insights Dashboard
+# Employee dashboard with AI-powered performance summaries
 
 A streamlined employee dashboard featuring real-time AI insights powered by Groq, with a focus on data privacy and operational resilience.
 
@@ -24,7 +24,7 @@ This dashboard allows engineering managers to view employee activity and generat
    cd mock-server
    npm install
    ```
-2. Create a `.env` file in `mock-server/`:
+2. Create a `.env` file in `server/`:
    ```env
    GROQ_API_KEY=your_gsk_key_here
    PORT=4000
